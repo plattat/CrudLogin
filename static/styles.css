@@ -1,0 +1,149 @@
+/* Reset de estilos y configuraciones globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Colores globales */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f4f4f4;
+    --card-bg-color: #ffffff;
+    --text-color: #333;
+    --hover-bg: #0056b3;
+}
+
+/* Body */
+body {
+    background-color: var(--background-color);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Formulario de Login */
+.login-container, .registro-container, .restablecer-container {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 40px auto;
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Campos de entrada */
+input[type="text"], input[type="email"], input[type="password"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="submit"], button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Enlaces */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Mensajes de alerta */
+.flash-message {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.flash-message.success {
+    background-color: #28a745;
+}
+
+.flash-message.danger {
+    background-color: #dc3545;
+}
+
+/* Dashboard */
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--text-color);
+}
+
+.card a {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* Layout de página */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 15px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+.footer {
+    background-color: var(--secondary-color);
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}

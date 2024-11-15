@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Persona</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="navbar">Bienvenido al sistema de gestión</div>
+    
+    <div class="crear-persona-container">
+        <h2>Crear Persona</h2>
+        <form action="/crear_persona" method="post">
+            <input type="text" name="nombre1" placeholder="Primer nombre" required>
+            <input type="text" name="nombre2" placeholder="Segundo nombre">
+            <input type="text" name="apellido1" placeholder="Primer apellido" required>
+            <input type="text" name="apellido2" placeholder="Segundo apellido">
+            <input type="text" name="direccion" placeholder="Dirección" required>
+            <input type="text" name="movil" placeholder="Móvil" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <select name="idPerfil" required>
+                <option value="1">Administrador</option>
+                <option value="2">Cliente</option>
+            </select>
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="contrasena" placeholder="Contraseña" required>
+            <button type="submit">Crear Persona</button>
+        </form>
+        <p><a href="/dashboard">Volver al Dashboard</a></p>
+    </div>
+
+    <div class="footer">© 2024 Sistema de Gestión. Todos los derechos reservados.</div>
+</body>
+</html>

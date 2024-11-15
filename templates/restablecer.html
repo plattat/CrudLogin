@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restablecer Contraseña</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="navbar">Bienvenido a tu sistema de gestión</div>
+    
+    <div class="restablecer-container">
+        <h2>Restablecer Contraseña</h2>
+        <form action="/restablecer" method="post">
+            <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+            <button type="submit">Restablecer</button>
+        </form>
+        <p><a href="/">Volver al inicio</a></p>
+    </div>
+
+    <div class="footer">© 2024 Sistema de Gestión. Todos los derechos reservados.</div>
+</body>
+</html>

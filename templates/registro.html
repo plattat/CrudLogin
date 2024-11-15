@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="navbar">Bienvenido a tu sistema de gestión</div>
+    
+    <div class="registro-container">
+        <h2>Crear Cuenta</h2>
+        <form action="/registro" method="post">
+            <input type="text" name="nombre1" placeholder="Primer nombre" required>
+            <input type="text" name="nombre2" placeholder="Segundo nombre">
+            <input type="text" name="apellido1" placeholder="Primer apellido" required>
+            <input type="text" name="apellido2" placeholder="Segundo apellido">
+            <input type="text" name="direccion" placeholder="Dirección" required>
+            <input type="text" name="movil" placeholder="Móvil" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <select name="idPerfil" required>
+                <option value="1">Administrador</option>
+                <option value="2">Cliente</option>
+            </select>
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="contrasena" placeholder="Contraseña" required>
+            <button type="submit">Crear Cuenta</button>
+        </form>
+        <p><a href="/">Ya tengo una cuenta</a></p>
+    </div>
+
+    <div class="footer">© 2024 Sistema de Gestión. Todos los derechos reservados.</div>
+</body>
+</html>

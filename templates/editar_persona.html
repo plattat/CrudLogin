@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Persona</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="navbar">Bienvenido al sistema de gestión</div>
+    
+    <div class="editar-persona-container">
+        <h2>Editar Persona</h2>
+        <form action="/editar_persona/{{ persona.id_persona }}" method="post">
+            <input type="text" name="nombre1" value="{{ persona.nombre1 }}" placeholder="Primer nombre" required>
+            <input type="text" name="nombre2" value="{{ persona.nombre2 }}" placeholder="Segundo nombre">
+            <input type="text" name="apellido1" value="{{ persona.apellido1 }}" placeholder="Primer apellido" required>
+            <input type="text" name="apellido2" value="{{ persona.apellido2 }}" placeholder="Segundo apellido">
+            <input type="text" name="direccion" value="{{ persona.direccion }}" placeholder="Dirección" required>
+            <input type="text" name="movil" value="{{ persona.movil }}" placeholder="Móvil" required>
+            <input type="email" name="email" value="{{ persona.email }}" placeholder="Correo electrónico" required>
+            <select name="idPerfil" required>
+                <option value="1" {% if persona.idPerfil == 1 %}selected{% endif %}>Administrador</option>
+                <option value="2" {% if persona.idPerfil == 2 %}selected{% endif %}>Cliente</option>
+            </select>
+            <input type="text" name="usuario" value="{{ persona.usuario }}" placeholder="Usuario" required>
+            <input type="password" name="contrasena" placeholder="Contraseña (dejar vacío para no cambiar)">
+            <button type="submit">Guardar cambios</button>
+        </form>
+        <p><a href="/dashboard">Volver al Dashboard</a></p>
+    </div>
+
+    <div class="footer">© 2024 Sistema de Gestión. Todos los derechos reservados.</div>
+</body>
+</html>

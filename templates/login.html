@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="navbar">Bienvenido a tu sistema de gestión</div>
+    
+    <div class="login-container">
+        <h2>Iniciar sesión</h2>
+        {% if get_flashed_messages() %}
+            <div class="flash-message {{ get_flashed_messages()[0] }}">
+                {{ get_flashed_messages()[1] }}
+            </div>
+        {% endif %}
+        <form action="/" method="post">
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="contrasena" placeholder="Contraseña" required>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+        <p><a href="/registro">Crear una cuenta</a> | <a href="/restablecer">¿Olvidaste tu contraseña?</a></p>
+    </div>
+
+    <div class="footer">© 2024 Sistema de Gestión. Todos los derechos reservados.</div>
+</body>
+</html>

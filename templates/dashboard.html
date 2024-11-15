@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="navbar">Bienvenido a tu Dashboard</div>
+
+    <div class="dashboard-container">
+        <!-- Tarjetas de acción según el perfil -->
+        {% if perfil == 'Administrador' %}
+            <div class="card">
+                <h3>Gestionar Personas</h3>
+                <p>Aquí puedes agregar, editar, eliminar y consultar las personas.</p>
+                <a href="/crear_persona">Crear Persona</a>
+                <a href="/editar_personas">Editar Personas</a>
+            </div>
+            <div class="card">
+                <h3>Administrar Perfiles</h3>
+                <p>Gestiona los perfiles de los usuarios (Administrador, Cliente).</p>
+                <a href="/perfiles">Gestionar Perfiles</a>
+            </div>
+        {% endif %}
+
+        <div class="card">
+            <h3>Mis Datos</h3>
+            <p>Consulta o actualiza tu información personal.</p>
+            <a href="/editar_persona/{{ usuario.id_persona }}">Editar mi información</a>
+        </div>
+
+        {% if perfil == 'Administrador' %}
+            <div class="card">
+                <h3>Estadísticas</h3>
+                <p>Accede a las estadísticas de usuarios y actividad.</p>
+                <a href="/estadisticas">Ver Estadísticas</a>
+            </div>
+        {% endif %}
+        
+        <div class="card">
+            <h3>Cerrar sesión</h3>
+            <p>Si deseas salir de tu cuenta, haz clic aquí.</p>
+            <a href="/logout">Cerrar sesión</a>
+        </div>
+    </div>
+
+    <div class="footer">© 2024 Sistema de Gestión. Todos los derechos reservados.</div>
+</body>
+</html>
